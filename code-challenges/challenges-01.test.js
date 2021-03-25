@@ -68,25 +68,25 @@ const allUpperCase = (arr) => {
   return upperCaseArray;
 };
 
-const allUpperCase = (arr) => {
-  // Solution code here...
-  const upperCaseArray = [];
-  arr.forEach( str =>{ //for.each is iterating over every element in the array.
-    let upperCase = str.toUpperCase();
-    upperCaseArray.push(upperCase);
-  });
-  return upperCaseArray;
-};
+// const allUpperCase = (arr) => {
+//   // Solution code here...
+//   const upperCaseArray = [];
+//   arr.forEach( str =>{ //for.each is iterating over every element in the array.
+//     let upperCase = str.toUpperCase();
+//     upperCaseArray.push(upperCase);
+//   });
+//   return upperCaseArray;
+// };
 
-const allUpperCase = (arr) => {
-  // Solution code here...
-  arr.forEach( str =>{ upperCaseArray
-  const upperCaseArray = [];
-    let upperCase = str.toUpperCase();
-    upperCaseArray.push(upperCase);
-  });
-  return upperCaseArray;
-};
+// const allUpperCase = (arr) => {
+//   // Solution code here...
+//   arr.forEach( str =>{ upperCaseArray
+//   const upperCaseArray = [];
+//     let upperCase = str.toUpperCase();
+//     upperCaseArray.push(upperCase);
+//   });
+//   return upperCaseArray;
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -108,7 +108,7 @@ const greeting = (word) => {
 const speaker = (words, callback) => {
   // Solution code here...
   const answer = [];
-  words.forEach( function (word) => {
+  words.forEach( (word) => {
     answer.push(callback(word));
   });
   return answer;
@@ -175,7 +175,7 @@ const createList = (availableItems) => {
   let groceryList = [];
   availableItems.forEach((element) => {
     if(element.available) {
-      groceryList.push.element.name);
+      groceryList.push(element.name);
     }
   });
   return groceryList;
