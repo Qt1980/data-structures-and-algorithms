@@ -13,7 +13,7 @@ const addOne = (arr) => {
   arr.forEach( function(value, i) {
     answer.push(value + 1);
   });
-  return answer
+  return answer;
 };
 //Different type that also works
 // const addOne = (arr) {
