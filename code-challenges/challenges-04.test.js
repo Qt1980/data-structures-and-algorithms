@@ -21,12 +21,26 @@ function lower(str) {
   return str.toLowerCase();
 }
 
-const updateAnimal = (arr, callback) => {
- const newArr = [];
- arr.map(item => newArr.push(callback(item)));
- return newArr;
-};
+// Example 1:
+// const updateAnimal = (arr, callback) => {
+//  const newArr = [];
+//  arr.map(item => newArr.push(callback(item)));
+//  return newArr;
+// };
 
+//Example 2:
+const updateAnimal = (arr, callback) => {
+//   const results = [];
+//   arr.forEach(animal => {
+//     results.push(callback);
+//   });
+//   return results;
+//  };
+
+//Example 3:
+const updateAnimal = (arr, callback) => {
+  return arr.map(callback);
+}
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -60,7 +74,15 @@ HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 ------------------------------------------------------------------------------------------------ */
 
 const sortBackwards = (arr) => {
-  // Solution code here...
+ return arr.sort( (a, b) {
+   if (a > b) {
+     return -1;
+   } else if (b > a) {
+     return 1;
+   }else {
+     return 0;
+   }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -74,7 +96,7 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetize = (arr) => {
-  // Solution code here...
+  return arr.sort();
 };
 
 /* ------------------------------------------------------------------------------------------------
