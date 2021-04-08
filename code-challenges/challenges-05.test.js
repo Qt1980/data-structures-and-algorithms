@@ -11,9 +11,8 @@ should convert to ["Jane Doe", "James Bond"]
 Note the space in between first and last names.
 You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
-const toLastNames = people => {
-  // Solution code here...
-};
+const toLastNames = people => people.map(person => `${person.firstName} ${person.lastName}`);
+
 
 
 
@@ -115,10 +114,11 @@ let starWarsData = [{
   gender: 'female'
 }];
 
-const returnNames = (arr) => {
-  // let newStarWarsData = [];
-  return arr.reduce( (starWarsData) => starWarsData.name + 1, 0),[];
-};
+const returnNames = (arr) => arr.reduce((x, y) => {
+  x.push(y.name);
+  return x;
+},[]);
+
 //returning the array but the name property is not being returned inside the array.
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -129,7 +129,7 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  // Solution code here...
+  return str.split('').reduce((rev, char ) => char + rev ,'');
 };
 
 /* ------------------------------------------------------------------------------------------------
