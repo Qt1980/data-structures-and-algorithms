@@ -113,6 +113,15 @@ const grandTotal = (stores) => {
   return allCookiesArray;
 };
 
+class Car {
+  constructor(name, cylinders, manufacturer) {
+    this.name = name;
+    this.cylinders = cylinders;
+    this.manufacturer = manufacturer;
+  }
+}
+
+new Car("M3", 6, "BMW");
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
