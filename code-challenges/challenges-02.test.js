@@ -23,7 +23,7 @@ CHALLENGE 2
 Write a function named addOne that, given an array of numbers, uses map to return a new array with each value simply incremented by 1. 
 ------------------------------------------------------------------------------------------------ */
 
-const addOne = (arr) => { return arr.map(element => element + 1); };
+const addOne = (arr) => { return arr.map(element => element + 1);};
 
 
 
@@ -51,9 +51,16 @@ const forLoopTwoToThe = (arr) => {
   for (const value of arr) {
     return arr.map(value => Math.pow(2, value));
   }
-
 };
 
+//Alernative solution
+// const forLoopTwoToThe = (arr) => {
+//   let newArr = [];
+//   for (let i in arr) { //for-in loops interate over each index in the array
+//     newArr.push(Math.pow(2, arr[i]));
+//   }
+//   return newArr;
+// };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
  
@@ -91,7 +98,7 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
-  // Solution code here...
+  return arr.map(str => str.charCodeAt());
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -105,7 +112,12 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
-  // Solution code here...
+  return arr.map(num => {
+    if(typeof num !== 'number') {
+      return 'N/A';
+    }
+    return num % 2 === 0 ? 'even': 'odd';
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -263,14 +275,14 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return an array containing the character code for each letter', () => {
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1'])).toStrictEqual([67, 111, 100, 101, 51, 48, 49]);
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1']).length).toStrictEqual(7);
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return an array containing the keys from an object', () => {
     expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541])).toStrictEqual(['odd', 'even', 'even', 'even', 'odd', 'odd', 'even', 'odd']);
     expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541]).length).toStrictEqual(8);
