@@ -11,7 +11,9 @@ Write a function named raisedToTheThird that takes in an array of numbers and re
 const raisedToTheThird = (arr) => {
   // Solution code here...
   const numbers = [];
+
   arr.forEach(function (value) {
+
     numbers.push(Math.pow(value, 3));
   });
   return (numbers);
@@ -23,7 +25,12 @@ CHALLENGE 2
 Write a function named addOne that, given an array of numbers, uses map to return a new array with each value simply incremented by 1. 
 ------------------------------------------------------------------------------------------------ */
 
+
 const addOne = (arr) => { return arr.map(element => element + 1);};
+
+
+
+
 
 
 
@@ -89,11 +96,11 @@ const mapTwoToThe = (arr) => arr.map(num => Math.pow(2, num));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
- 
+
 Write a function named charCode that, given an array of letters as an input, uses map to return a new array where each element is the result of the `charCodeAt` method on the original array element.
- 
+
 Read the MDN documentation on String.charCodeAt() if necessary.
- 
+
 For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
@@ -103,11 +110,11 @@ const charCode = (arr) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
- 
+
 Write a function that, given an array of numbers as input, uses map to return a new array where each element is either the string "even" or the string "odd", based on each value.
- 
+
 If any element in the array is not a number, the resulting array should have the string "N/A" in its place.
- 
+
 For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
@@ -122,11 +129,11 @@ const evenOdd = (arr) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
- 
+
 Use the snorlaxAbilities data, below, for this challenge.
- 
+
 Write a function named extractAbilities that, given the array of abilities, uses map to create an array containing only the ability name.
- 
+
 Note: Because this function is expecting the array of abilities, it will be invoked as:
 extractAbilities(snorlaxAbilities.abilities)
 ------------------------------------------------------------------------------------------------ */
@@ -168,13 +175,13 @@ const extractAbilities = (arr) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
- 
+
 Use the snorlaxStats data, below, for this challenge.
- 
+
 Write a function named extractStats that, given an array of stats, uses map to return an array of objects containing the stat name and the total.
- 
+
 The total should be the sum of the effort and the baseStat.
- 
+
 Here is an example of a single array element: { name: 'speed', total: 35 }
 ------------------------------------------------------------------------------------------------ */
 
@@ -215,13 +222,13 @@ const extractStats = (arr) => {
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
- 
+
 All the code below will verify that your functions are working to solve the challenges.
- 
+
 DO NOT CHANGE any of the below code.
- 
+
 Run your tests from the console: jest challenges-07.test.js
- 
+
 ------------------------------------------------------------------------------------------------ */
 
 describe('Testing challenge 1', () => {
@@ -277,29 +284,29 @@ describe('Testing challenge 6', () => {
 
 describe('Testing challenge 7', () => {
   test('It should return an array containing the character code for each letter', () => {
-    expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1'])).toStrictEqual([67, 111, 100, 101, 51, 48, 49]);
+    expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1'])).toStrictEqual([ 67, 111, 100, 101, 51, 48, 49 ]);
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1']).length).toStrictEqual(7);
   });
 });
 
 describe('Testing challenge 8', () => {
   test('It should return an array containing the keys from an object', () => {
-    expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541])).toStrictEqual(['odd', 'even', 'even', 'even', 'odd', 'odd', 'even', 'odd']);
+    expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541])).toStrictEqual([ 'odd', 'even', 'even', 'even', 'odd', 'odd', 'even', 'odd' ]);
     expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541]).length).toStrictEqual(8);
   });
 
   test('It should work with all odd numbers', () => {
-    expect(evenOdd([1, 3, 5, 7, 9])).toStrictEqual(['odd', 'odd', 'odd', 'odd', 'odd']);
+    expect(evenOdd([1, 3, 5, 7, 9])).toStrictEqual([ 'odd', 'odd', 'odd', 'odd', 'odd' ]);
     expect(evenOdd([1, 3, 5, 7, 9]).length).toStrictEqual(5);
   });
 
   test('It should work with all even numbers', () => {
-    expect(evenOdd([2, 4, 6, 8, 10])).toStrictEqual(['even', 'even', 'even', 'even', 'even']);
+    expect(evenOdd([2, 4, 6, 8, 10])).toStrictEqual([ 'even', 'even', 'even', 'even', 'even' ]);
     expect(evenOdd([2, 4, 6, 8, 10]).length).toStrictEqual(5);
   });
 
   test('It should return the string "N/A" if a non-number is included in the array', () => {
-    expect(evenOdd([5, 8, 2, 'hi'])).toStrictEqual(['odd', 'even', 'even', 'N/A']);
+    expect(evenOdd([5, 8, 2, 'hi'])).toStrictEqual([ 'odd', 'even', 'even', 'N/A' ]);
     expect(evenOdd([5, 8, 2, 'hi']).length).toStrictEqual(4);
   });
 });
@@ -320,4 +327,4 @@ xdescribe('Testing challenge 10', () => {
     ]);
     expect(extractStats(snorlaxStats.stats).length).toStrictEqual(3);
   });
-})
+});
