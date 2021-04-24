@@ -135,6 +135,11 @@ const salesData = (hours, data) => {
   return cookiesSold;
 };
 
+// const salesData = (hours, data) => {
+//   const cookiesSold = [];
+//   hours.forEach(( hour, index) => cookiesSold.push({sales: `${data[index]} cookies`, time: hour}));
+//   return cookiesSold;
+// }
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
@@ -157,7 +162,11 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  return arr[2].items[1].quantity
+  //arr looks at the entire errands array;
+  //[2] looks at the second index in the errand array which is the 3rd object. 
+  //.items targets the key of items array and [1] targets information that is at index 1 in the array.
+  //lastly quantity targets the number (24) of treats at the pet store.
 };
 
 /* ------------------------------------------------------------------------------------------------
