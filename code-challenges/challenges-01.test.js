@@ -10,10 +10,8 @@ Use `forEach` to loop over the input array and work with each value.  Push the n
 
 const addOne = (arr) => {
   const answer = [];
-  arr.forEach( function(value, i) {
-    answer.push(value + 1);
-  });
-  return answer
+  arr.forEach( value => answer.push(value + 1));
+  return answer;
 };
 //Different type that also works
 // const addOne = (arr) {
@@ -61,10 +59,9 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 const allUpperCase = (arr) => {
   // Solution code here...
   const upperCaseArray = [];
-  arr.forEach( function(str, i) { //for.each is iterating over every element in the array.
-    let upperCase = str.toUpperCase();
-    upperCaseArray.push(upperCase);
-  });
+  //for.each is iterating over every element in the array.
+  arr.forEach( str => upperCaseArray.push(str.toUpperCase()));
+  // let upperCase = str.toUpperCase();
   return upperCaseArray;
 };
 
