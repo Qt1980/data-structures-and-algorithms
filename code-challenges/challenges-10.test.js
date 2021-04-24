@@ -113,15 +113,6 @@ const grandTotal = (stores) => {
   return allCookiesArray;
 };
 
-class Car {
-  constructor(name, cylinders, manufacturer) {
-    this.name = name;
-    this.cylinders = cylinders;
-    this.manufacturer = manufacturer;
-  }
-}
-
-new Car("M3", 6, "BMW");
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -131,9 +122,17 @@ Here is sample data for the 9:00 sales: { sales: '88 cookies', time: '9 a.m.' }.
 
 Write a function named salesData that uses forEach to iterate over the hourlySales array and create an object for each hour. Return an array of the formatted data.
 ------------------------------------------------------------------------------------------------ */
-
+// create an object out of data
+// the object should contain sales and time
 const salesData = (hours, data) => {
-  // Solution code here...
+  const cookiesSold = [];
+  data.forEach((value, i) => {
+    cookiesSold.push({
+      sales: `${value} cookies`,
+      time: hours[i]
+    });
+  });
+  return cookiesSold;
 };
 
 /* ------------------------------------------------------------------------------------------------
