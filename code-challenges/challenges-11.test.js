@@ -30,7 +30,7 @@ Note: You might need to use the same method more than once.
 
 For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
-
+//Courtesy of Adrian Milsap
 const count = (target, input) => {
   const newArr = [];
   for(let i = 0; i < input.length; i++){
@@ -75,10 +75,12 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 //Removes anything that is not a number or divisible by 5
 
 const divisibleByFiveTwoToThePower = (input) => {
-  return input.map(num => num.length % 5);
-};
+  return input.map(num => 
+    num.filter(x => (typeof x === 'number') && (x % 5 === 0))
+    .map(x => Math.pow(2, x)));
+  };
 
-/* ------------------------------------------------------------------------------------------------
+/*                     ------------------------------------------------------------------------------------------------
 CHALLENGE 5 
 
 Write a function named findMaleAndFemale that, given the Star Wars data, below,
@@ -141,7 +143,7 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
+  return data.filter(x => (x.gender === 'male') || (x.gender === 'female')).map(x => x.name).join(' and ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -151,7 +153,7 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+  return data.reduce((a, b) => Number(a.height) < Number(b.height) ? a : b).name;
 };
 
 /* ------------------------------------------------------------------------------------------------
