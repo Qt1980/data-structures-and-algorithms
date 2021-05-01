@@ -50,7 +50,7 @@ const hasNumber = (string) => {
   let r = /[a-zA-Z]\d+/;
   return r.test(string);
 };
-
+// return /[A-Za-z]+\d+/.test(string);
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -66,9 +66,9 @@ Return either true or false.
 
 Note: if you ever need to validate an email using a regex in practice, the Internet has the actual regex you should use. It's many many lines long.
 ------------------------------------------------------------------------------------------------ */
-
+//seen in class by Michelle
 const validateEmail = (email) => {
-  // Solution code here...
+  return /\w+(\.\w+)?@\w+\.(net|com|org)$/.test(email);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -91,9 +91,9 @@ Your function should include a single regular expression pattern that matches an
 
 Return either true or false.
 ------------------------------------------------------------------------------------------------ */
-
+//seen in class my Michelle
 const validatePhoneNumber = (phoneNumber) => {
-  // Solution code here...
+  return /^((\(\d\d\d\))|(\d\d\d))[ -]?\d\d\d[ -]?\d\d\d$/.test(phoneNumber);
 };
 
 /* ------------------------------------------------------------------------------------------------
