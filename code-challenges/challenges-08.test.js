@@ -54,6 +54,7 @@ let characters = [
   }
 ];
 
+//Courtesy of Michael Hendricks
 const sortByChildren = (charArray) => {
   // Solution code here...
   charArray.sort((a, b) => {
