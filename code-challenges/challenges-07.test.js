@@ -48,7 +48,7 @@ Write a function named joinArray that takes an array and joins all of the elemen
 ------------------------------------------------------------------------------------------------ */
 
 const joinArray = (arr) => {
-  // Solution code here...
+  return arr.join(' ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,13 +63,15 @@ Your function should use slice within a loop and return an array of each success
 For example, if the input is 'Welcome', the output will be:
 ['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', ''].
 ------------------------------------------------------------------------------------------------ */
-
+//answer courtesy of Kassie Bradshaw
 const howMuchPencil = (str) => {
   let result = [];
-  // Solution code here...
+  for (let i = 0; i < str.length+1; i++) {
+    result.push(str.slice(i));
+  }
   return result;
 };
-
+//Try writing above loop using shorthand
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -79,9 +81,9 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-  // Solution code here...
+  return arr.split('');
 };
-
+// const wordsToCharList = (arr) => arr.split('');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -123,10 +125,14 @@ const gruffaloCrumble = {
   ]
 };
 
-
+//Coutesy of Kassie Bradshaw
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.ingredients.forEach(ingredient => {
+    let noNum = ingredient.slice(ingredient.indexOf(' ' ) + 1);
+    let noAmt = noNum.slice(noNum.indexOf(' ') +1);
+    result.push(noAmt);
+  });
   return result;
 };
 
