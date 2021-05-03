@@ -9,9 +9,9 @@ using the 'reduce' method.
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
- return arr.reduce((accumulator, currentValue) => {
- return currentValue > accumulator ? currentValue : accumulator;
-});
+  return arr.reduce((accumulator, currentValue) => {
+    return currentValue > accumulator ? currentValue : accumulator;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -27,7 +27,8 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
 };
 
 const getCourseKeys = (obj) => {
-  // Solution code here...
+  let arrkey = Object.keys(courseInfo);
+  return arrkey;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -38,8 +39,9 @@ Write a function named checkValues that takes in an object and a value and retur
 
 ------------------------------------------------------------------------------------------------ */
 
+//Courtesy of Michael Hendricks
 const checkValues = (obj, value) => {
-  // Solution code here...
+  return Object.values(obj).includes(value) ? true : false;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -61,8 +63,9 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 ------------------------------------------------------------------------------------------------ */
 
+//Courtesy of Michael Hendricks
 const updateNumbers = (obj) => {
-  // Solution code here...
+  return Object.entries(obj).map(value => value.join(': '));
 };
 
 
@@ -73,6 +76,7 @@ CHALLENGE 5
 Write a function named getHouses that returns a new array containing the names of all of the houses in the data set.
 ------------------------------------------------------------------------------------------------ */
 
+//Courtesy of Michael Hendricks
 const characters = [
   {
     name: 'Eddard',
@@ -117,10 +121,9 @@ const characters = [
 ];
 
 const getHouses = (arr) => {
-  let houses = [];
-  // Solution code here...
-  return houses;
+  return arr.map(characters => characters.house);
 };
+
 
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -134,8 +137,14 @@ hasChildrenValues(characters, 'Cersei') will return true
 hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
+//Courtesy of Kassie Bradshaw
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
+  for (const obj of arr) {
+    if(Object.values(obj).includes(character)) {
+      return obj.children && obj.children.length;
+    }
+  }
+  return false;
 
 };
 
