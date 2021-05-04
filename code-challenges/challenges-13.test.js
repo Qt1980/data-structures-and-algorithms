@@ -3,13 +3,19 @@
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
-Write a function named longestString that takes in an array of strings and returns the index position of the longest string. 
+Write a function named longestString that takes in an array of strings and returns the index position of the longest string.
 ------------------------------------------------------------------------------------------------ */
 
 const longestString = (arr) => {
-// Solution code here...
+  let str = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].length > str) {
+      str = arr[i].length;
+    }
+  }
+  return str;
 };
-  
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -19,7 +25,7 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 ------------------------------------------------------------------------------------------------ */
 
 const firstLetters = (arr) => {
-  // Solution code here...
+  return arr.map(str => str.charAt(0));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -31,7 +37,8 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
-  // Solution code here...
+  let regex = /\s|-|\(|\)/gm;
+  return arr.test(regex);
 };
 
 /* ------------------------------------------------------------------------------------------------
