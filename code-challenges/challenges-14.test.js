@@ -23,8 +23,9 @@ Write a function named toTitleCase that takes in an array of strings and returns
 For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyver'].
 ------------------------------------------------------------------------------------------------ */
 
+//This works just fine
 const toTitleCase = (arr) => {
-  // Solution code here...
+  return arr.map(str => str.charAt(0).toUpperCase() + str.slice(1));
 };
 
 /* ------------------------------------------------------------------------------------------------
