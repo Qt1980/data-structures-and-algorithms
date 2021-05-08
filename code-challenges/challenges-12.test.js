@@ -94,9 +94,8 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 //seen in class my Michelle
 const validatePhoneNumber = (phoneNumber) => {
-  return /^((\(\d\d\d\))|(\d\d\d))[ -]?\d\d\d[ -]?\d\d\d$/.test(phoneNumber);
-};
-
+  return /^((\(\d\d\d\))|(\d\d\d))[ -]?\d\d\d[ -]?\d\d\d\d$/.test(phoneNumber);};
+//added one more \d at the end to complete both parts of the test.
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
